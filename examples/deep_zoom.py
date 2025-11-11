@@ -21,7 +21,7 @@ from export_engine import ExportEngine, ExportConfig
 def main():
     """Generate high-resolution deep zoom Mandelbrot images."""
     print("🔍 High-Resolution Deep Zoom Generator")
-    print("⚠️  Warning: This will generate large, detailed images!")
+    print(" Warning: This will generate large, detailed images!")
     
     # Create engines
     fractal_engine = FractalEngine()
@@ -88,7 +88,7 @@ def main():
         print("   🔄 Computing fractal...")
         iterations = fractal_engine.generate_mandelbrot(config)
         
-        print("   🎨 Applying colors...")
+        print("   Applying colors...")
         rgb_image = color_engine.apply_color_mapping(
             iterations,
             location['palette'],
@@ -98,7 +98,7 @@ def main():
         )
         
         # Apply subtle enhancements
-        print("   ✨ Enhancing image...")
+        print("   Enhancing image...")
         enhanced_image = color_engine.enhance_image(
             rgb_image,
             contrast=1.05,
@@ -125,12 +125,12 @@ def main():
             config.width, config.height, "PNG"
         )
         
-        print(f"   ✅ Complete! Generated in {generation_time:.1f}s")
-        print(f"   📁 Saved: {output_path}")
-        print(f"   📏 Estimated size: {file_size}")
+        print(f"   Complete! Generated in {generation_time:.1f}s")
+        print(f"   Saved: {output_path}")
+        print(f"   Estimated size: {file_size}")
     
-    print("\n🎨 High-resolution deep zoom collection complete!")
-    print("🖼️  These images are perfect for large displays and printing")
+    print("\nHigh-resolution deep zoom collection complete!")
+    print(" These images are perfect for large displays and printing")
 
 
 if __name__ == "__main__":

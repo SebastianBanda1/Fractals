@@ -1,4 +1,4 @@
-# 🌀 Fractal Visualizer
+# Fractal Visualizer
 
 **High-Performance Fractal Generation and Wallpaper Creator**
 
@@ -6,9 +6,9 @@ Generate stunning fractal visualizations including Mandelbrot sets, Julia sets, 
 
 ![Fractal Examples](assets/fractal_preview.png)
 
-## ✨ Features
+## Features
 
-### 🎨 **Multiple Fractal Types**
+### **Multiple Fractal Types**
 - **Mandelbrot Set** - The classic fractal with infinite detail
 - **Julia Sets** - Beautiful variations with complex parameters  
 - **Burning Ship** - Dramatic fractal resembling a ship
@@ -21,14 +21,14 @@ Generate stunning fractal visualizations including Mandelbrot sets, Julia sets, 
 - **Color Enhancement** - Contrast, brightness, and saturation controls
 - **Multiple Color Spaces** - RGB, HSV, LAB support
 
-### 🖼️ **High-Resolution Export**
+### **High-Resolution Export**
 - **Multiple Resolutions** - HD, Full HD, QHD, 4K, 8K support
 - **Wallpaper Presets** - Standard desktop and mobile sizes
 - **Format Options** - PNG, JPEG, WebP export
 - **Batch Export** - Generate multiple resolutions at once
 - **Quality Controls** - Compression and optimization settings
 
-### 🚀 **Performance Optimized**
+### **Performance Optimized**
 - **Numba JIT Compilation** - Lightning-fast computation
 - **Parallel Processing** - Multi-core CPU utilization
 - **Memory Efficient** - Handles large images smoothly
@@ -41,7 +41,7 @@ Generate stunning fractal visualizations including Mandelbrot sets, Julia sets, 
 - **Preset Points** - Explore interesting fractal locations
 - **Export Integration** - Direct wallpaper generation
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -131,7 +131,7 @@ saved_files = export_engine.save_wallpaper_set(
 )
 ```
 
-## 🎨 Color Palettes
+## Color Palettes
 
 ### Predefined Palettes
 
@@ -256,7 +256,7 @@ export_config = ExportConfig(
 )
 ```
 
-## 📊 Performance Benchmarks
+## Performance Benchmarks
 
 | Resolution | Iterations | Generation Time* | File Size (PNG) |
 |------------|------------|------------------|-----------------|
@@ -302,7 +302,7 @@ fractales/
 └── README.md                    # This file
 ```
 
-## 🔧 Dependencies
+## Dependencies
 
 ### Core Dependencies
 - **NumPy** - Numerical computations
@@ -357,4 +357,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Happy fractal generation! 🌀✨**
+**Happy fractal generation! **

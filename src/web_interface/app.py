@@ -40,13 +40,13 @@ class FractalApp:
     def run(self):
         """Run the Streamlit application."""
         st.set_page_config(
-            page_title="🌀 Fractal Visualizer",
-            page_icon="🌀",
+            page_title="Fractal Visualizer",
+            page_icon="",
             layout="wide",
             initial_sidebar_state="expanded"
         )
         
-        st.title("🌀 Fractal Visualizer & Wallpaper Generator")
+        st.title("Fractal Visualizer & Wallpaper Generator")
         st.markdown("*Create stunning fractal visualizations and high-resolution wallpapers*")
         
         # Sidebar for controls
@@ -96,7 +96,7 @@ class FractalApp:
                 julia_params['c_imag'] = st.slider("C Imaginary", -2.0, 2.0, 0.6, 0.01)
             
             # Color settings
-            st.subheader("🎨 Colors")
+            st.subheader("Colors")
             palette_type = st.selectbox(
                 "Color Palette",
                 self.color_engine.get_available_palettes(),
@@ -107,7 +107,7 @@ class FractalApp:
             gamma = st.slider("Gamma Correction", 0.1, 3.0, 1.0, 0.1)
             
             # Post-processing
-            st.subheader("✨ Enhancement")
+            st.subheader("Enhancement")
             contrast = st.slider("Contrast", 0.5, 2.0, 1.0, 0.1)
             brightness = st.slider("Brightness", -0.5, 0.5, 0.0, 0.1)
             saturation = st.slider("Saturation", 0.0, 2.0, 1.0, 0.1)
@@ -128,7 +128,7 @@ class FractalApp:
                 )
                 
                 for point in interesting_points:
-                    if st.button(f"🎯 {point['name']}", key=f"preset_{point['name']}"):
+                    if st.button(f"{point['name']}", key=f"preset_{point['name']}"):
                         st.session_state.preset_point = point
                         st.experimental_rerun()
     
@@ -156,7 +156,7 @@ class FractalApp:
             with col3:
                 filename = st.text_input("Filename", "fractal_wallpaper")
                 
-                if st.button("📁 Export Wallpapers"):
+                if st.button("Export Wallpapers"):
                     self._export_wallpapers(filename, export_format, quality, resolutions)
         
         else:
@@ -164,7 +164,7 @@ class FractalApp:
             
             # Show some example images or instructions
             st.markdown("""
-            ### 🚀 Quick Start Guide:
+            ### Quick Start Guide:
             
             1. **Choose a fractal type** from the sidebar
             2. **Adjust parameters** like zoom and center point
@@ -172,7 +172,7 @@ class FractalApp:
             4. **Generate** your fractal visualization
             5. **Export** in multiple resolutions for wallpapers
             
-            ### 🎨 Featured Fractals:
+            ### Featured Fractals:
             - **Mandelbrot Set**: The classic fractal with infinite detail
             - **Julia Sets**: Beautiful variations with complex parameters
             - **Burning Ship**: A dramatic fractal resembling a ship
@@ -197,12 +197,12 @@ class FractalApp:
             
             # Color distribution
             if 'color_stats' in data:
-                st.subheader("📊 Color Statistics")
+                st.subheader("Color Statistics")
                 st.write(f"**Unique Colors:** {data['color_stats']['unique_colors']}")
                 st.write(f"**In Set:** {data['color_stats']['in_set_percentage']:.1f}%")
         
         # Performance tips
-        st.subheader("⚡ Performance Tips")
+        st.subheader("Performance Tips")
         st.markdown("""
         - **Lower iterations** for faster preview
         - **Higher iterations** for detailed exports  
@@ -224,7 +224,7 @@ class FractalApp:
                          julia_params: Dict[str, float]):
         """Generate a fractal with the given parameters."""
         
-        with st.spinner('🎨 Generating fractal...'):
+        with st.spinner('Generating fractal...'):
             start_time = time.time()
             
             # Create fractal configuration
@@ -288,16 +288,16 @@ class FractalApp:
                 }
                 st.session_state.zoom_history.append(history_entry)
                 
-                st.success(f"✨ Fractal generated in {generation_time:.2f} seconds!")
+                st.success(f"Fractal generated in {generation_time:.2f} seconds!")
                 
             except Exception as e:
-                st.error(f"❌ Error generating fractal: {str(e)}")
+                st.error(f"Error generating fractal: {str(e)}")
     
     def _export_wallpapers(self, filename: str, export_format: str, 
                           quality: int, resolutions: list):
         """Export the current fractal as wallpapers."""
         if st.session_state.fractal_data is None:
-            st.error("❌ No fractal to export! Generate one first.")
+            st.error("No fractal to export! Generate one first.")
             return
         
         try:
@@ -313,7 +313,7 @@ class FractalApp:
                     rgb_image, filename, resolutions, export_config
                 )
                 
-                st.success(f"✅ Exported {len(saved_files)} wallpapers!")
+                st.success(f"Exported {len(saved_files)} wallpapers!")
                 
                 # Show export details
                 for res_name, file_path in saved_files.items():
@@ -321,7 +321,7 @@ class FractalApp:
                         *ResolutionPreset.get_all_presets()[res_name],
                         export_format, quality
                     )
-                    st.write(f"📁 {res_name}: {file_path} (~{file_size})")
+                    st.write(f"{res_name}: {file_path} (~{file_size})")
                 
                 # Also save settings for reproducibility
                 settings = {
@@ -341,10 +341,10 @@ class FractalApp:
                 settings_file = self.export_engine.export_settings(
                     settings, f"{filename}_settings.json"
                 )
-                st.write(f"⚙️ Settings: {settings_file}")
+                st.write(f"Settings: {settings_file}")
                 
         except Exception as e:
-            st.error(f"❌ Export failed: {str(e)}")
+            st.error(f"Export failed: {str(e)}")
     
     def _calculate_color_stats(self, iterations: np.ndarray, max_iter: int) -> Dict[str, Any]:
         """Calculate statistics about the fractal coloring."""
