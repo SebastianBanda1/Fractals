@@ -78,10 +78,10 @@ def main():
             resolutions=['Full HD', 'QHD', '4K']
         )
         
-        print(f"    ✅ Exported {julia_set['name']} in multiple resolutions")
+        print(f"    Exported {julia_set['name']} in multiple resolutions")
     
-    print("\n🎨 Julia set collection complete!")
-    print("📁 Check the output/wallpapers/ directory for your images")
+    print("\nJulia set collection complete!")
+    print("Check the output/wallpapers/ directory for your images")
 
 
 if __name__ == "__main__":

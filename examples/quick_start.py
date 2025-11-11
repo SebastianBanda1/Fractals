@@ -18,7 +18,7 @@ from export_engine import ExportEngine, ResolutionPreset
 
 def main():
     """Generate a basic Mandelbrot wallpaper."""
-    print("🌀 Quick Start: Generating Mandelbrot wallpaper...")
+    print("Quick Start: Generating Mandelbrot wallpaper...")
     
     # Create engines
     fractal_engine = FractalEngine()
@@ -55,8 +55,8 @@ def main():
         "mandelbrot_quickstart.png"
     )
     
-    print(f"✅ Wallpaper saved to: {output_path}")
-    print("🎨 Open the image to see your fractal wallpaper!")
+    print(f"Wallpaper saved to: {output_path}")
+    print("Open the image to see your fractal wallpaper!")
 
 
 if __name__ == "__main__":

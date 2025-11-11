@@ -20,7 +20,7 @@ from src.web_interface import main as run_web_interface
 
 def generate_sample_wallpapers():
     """Generate a set of sample wallpapers with different fractals and colors."""
-    print("🎨 Generating sample fractal wallpapers...")
+    print("Generating sample fractal wallpapers...")
     
     # Initialize engines
     fractal_engine = FractalEngine()
@@ -86,7 +86,7 @@ def generate_sample_wallpapers():
             subfolder="samples"
         )
     
-    print("✅ Sample wallpapers generated in output/samples/")
+    print("Sample wallpapers generated in output/samples/")
 
 
 def main():
@@ -128,27 +128,27 @@ For more information, visit: https://github.com/fractals/fractal-visualizer
     args = parser.parse_args()
     
     # Welcome message
-    print("🌀 Fractal Visualizer - High-Performance Wallpaper Generator")
+    print("Fractal Visualizer - High-Performance Wallpaper Generator")
     print("=" * 60)
     
     try:
         if args.samples:
             generate_sample_wallpapers()
         elif args.cli:
-            print("📋 Interactive CLI mode not yet implemented.")
-            print("💡 Use --web to launch the web interface instead.")
+            print("Interactive CLI mode not yet implemented.")
+            print("Use --web to launch the web interface instead.")
         else:
             # Default to web interface
-            print("🚀 Launching web interface...")
-            print("📱 Open your browser to the URL shown below:")
+            print("Launching web interface...")
+            print("Open your browser to the URL shown below:")
             print()
             run_web_interface()
             
     except KeyboardInterrupt:
-        print("\n👋 Goodbye!")
+        print("\nGoodbye!")
         sys.exit(0)
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"Error: {e}")
         sys.exit(1)
 
 
